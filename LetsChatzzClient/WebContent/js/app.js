@@ -24,8 +24,43 @@ app.config(function($routeProvider) {
 		controller : 'UserController',
 		templateUrl : '_user/register.html'
 	})
-	
-	
-	}
 
-)
+	// to create a new blog
+	.when('/createBlog', {
+		controller : 'BlogController',
+		templateUrl : '_blog/createBlog.html'
+	})
+	// to view all blogs
+	.when('/getAllBlogs', {
+		controller : 'BlogController',
+		templateUrl : '_blog/listOfBlogs.html'
+	})
+
+
+})
+app.run(function($cookieStore,$rootScope,$location,UserService){
+	
+	
+	   if($rootScope.currentUser==undefined){
+		   $rootScope.currentUser = $cookieStore.get('currentUser');
+		   
+	   }
+	   
+	   $rootScope.logout=function(){
+			console.log('logout function')
+			delete $rootScope.currentUser;
+			$cookieStore.remove('currentUser')
+			UserService.logout()
+			.then(function(response){
+				console.log("logged out successfully..");
+				/* $rootScope.message="Logged out Successfully"; */
+				$location.path('/login')
+			},
+			function(response){
+				console.log(response.status);
+			})
+			
+		}	
+		
+})
+	
