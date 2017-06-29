@@ -2,7 +2,7 @@ app.factory('UserService', function($http) {
 	
 	console.log('**********From userservice.js => Entering UserService');
 	var userService = {};
-	var BASE_URL = "http://localhost:2020/LetsChattzz"
+	var BASE_URL = "http://localhost:1010/LetsChattzz"
 	
 	
 	userService.registerUser = function(user) {

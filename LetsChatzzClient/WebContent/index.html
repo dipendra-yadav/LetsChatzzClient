@@ -51,6 +51,27 @@
 							<li><a href="#/createBlog">POST A BLOG</a></li>
 						</ul></li>
 				</ul>
+				
+				<div class="dropdown pull-right profile-dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown"
+						data-ng-show="currentUser.id"><img class="img-circle"
+						src="http://localhost:1010/LetsChattzz/resources/images/{{currentUser.username}}"
+						width="65px" height="65px" /> </a>
+
+					<ul class="dropdown-menu">
+						<li class="profilepic-dropdown">
+							
+								<div class="profilepic-dropdown-details">
+									<span class="profilepic-dropdown-details-username">Hi {{currentUser.name}}</span><br />
+									<span class="profilepic-dropdown-details-email">{{currentUser.email}}</span><br /><br />
+									<a href="" data-ng-click="logout()" class="profilepic-dropdown-details-logout-btn">LOGOUT</a>
+								</div>
+							
+						</li>
+						
+					</ul>
+				</div>
+				
 
 
 

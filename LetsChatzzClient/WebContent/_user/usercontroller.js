@@ -63,6 +63,24 @@ app.controller('UserController', function($scope, $rootScope, $location,$cookieS
 
 	
 	
+	// logout button
+	$rootScope.logout=function(){
+		console.log('**********From UserController.js => logout() => Entering the logout function')
+		delete $rootScope.currentUser
+		
+		UserService.logout()
+		.then(function(response){
+			console.log("**********From UserController.js => logout() => success - Entering success function for logout")
+			console.log("**********response.status => " + response.status)
+			$location.path('/home')
+		},
+		function(response){
+			console.log("**********From UserController.js => logout() => failure - Entering failure function for logout")
+			console.log("**********response.status => " + response.status)
+		})
+		
+	}
+	
 	
 	
 

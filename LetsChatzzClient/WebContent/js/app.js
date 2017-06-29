@@ -6,7 +6,7 @@ app.config(function($routeProvider) {
 
 	// loads this page first - home
 	.when('/', {
-		templateUrl : '_home/home.html'
+		templateUrl : '/index.html'
 	})
 	// Home
 	.when('/home', {
