@@ -38,12 +38,14 @@ app.controller('UserController', function($scope, $rootScope, $location,$cookieS
 	// login button in login.html
 	$scope.login = function() {
 		console.log('**********From UserController.js => login() => Entering the login function')
+		
 		UserService.login($scope.user)
 		.then(
 		function(response){
 			console.log("**********From UserController.js => login() => success - Entering success function for login")
 			console.log("**********response.status => " + response.status)
 			$scope.user = response.data
+			console.log($scope.user);
 			$rootScope.currentUser=$scope.user
 			$cookieStore.put('currentUser',$rootScope.currentUser)
 			$location.path("/home")
@@ -51,9 +53,10 @@ app.controller('UserController', function($scope, $rootScope, $location,$cookieS
 		function(response) {
 			console.log("**********From UserController.js => login() => failure - Entering failure function for login")
 			console.log("**********response.status => " + response.status)
+			console.log($scope.user);
 			$scope.message = "Invalid Username or Password"
-			$scope.user.username=''
-			$scope.user.password=''
+			/*$scope.user.username=''
+			$scope.user.password=''*/
 			$location.path("/login")
 		})
 	}
