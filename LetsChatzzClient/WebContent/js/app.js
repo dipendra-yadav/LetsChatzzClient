@@ -35,6 +35,28 @@ app.config(function($routeProvider) {
 		controller : 'BlogController',
 		templateUrl : '_blog/listOfBlogs.html'
 	})
+	
+	
+	// to post a new job
+	.when('/postJob', {
+		controller : 'JobController',
+		templateUrl : '_job/createJob.html'
+	})
+
+	
+	// to view all the jobs
+	.when('/getAllJobs', {
+		controller : 'JobController',
+		templateUrl : '_job/jobsTitles.html'
+	})
+
+	
+	// to view the job detail of a job
+	.when('/jobDetail/:jobId', {
+		controller : 'JobDetailController',
+		templateUrl : '_job/jobDetail.html'
+	})
+	
 
 
 })

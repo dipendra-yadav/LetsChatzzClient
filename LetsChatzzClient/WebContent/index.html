@@ -41,6 +41,20 @@
 
 
 
+				<!-- Job module -->
+				<ul class="nav navbar-nav">
+					<li><a href="" class="dropdown-toggle" data-toggle="dropdown"
+						data-ng-show="currentUser.id">JOBS &nbsp;<b class="caret"></b>
+					</a>
+
+						<ul class="dropdown-menu">
+							<li><a href="#/getAllJobs">FIND JOBS</a></li>
+							<li><a href="#/postJob"
+								data-ng-show="currentUser.role=='ROLE_ADMIN' || currentUser.role=='EMPLOYEE'">POST A JOB</a></li>
+						</ul></li>
+				</ul>
+
+
 				<!-- Blog Module -->
 				<ul class="nav navbar-nav">
 					<li class="dropdown" data-ng-show="currentUser.id"><a href=""
@@ -110,6 +124,11 @@
 <script type="text/javascript" src="_user/userservice.js"></script>
 <script type="text/javascript" src="_blog/blogcontroller.js"></script>
 <script type="text/javascript" src="_blog/blogservice.js"></script>
+<script type="text/javascript" src="_job/jobcontroller.js"></script>
+<script type="text/javascript" src="_job/jobservice.js"></script>
+<script type="text/javascript" src="_job/jobdetailcontroller.js"></script>
+
+
 
 
 </body>
