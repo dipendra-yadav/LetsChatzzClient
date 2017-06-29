@@ -1,8 +1,8 @@
 app.factory('BlogService',function($http){
 	
 	console.log('**********From blogservice.js => Entering BlogService');
-	var blogService=this;
-	var BASE_URL = "http://localhost:2020/LetsChatzzClient/"
+	var blogService={};
+	var BASE_URL = "http://localhost:1010/LetsChattzz/"
 		
 		
 		// create a new blog

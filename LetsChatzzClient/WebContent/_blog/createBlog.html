@@ -13,7 +13,7 @@
 			<form class="form-horizontal">
 				<div class="form-group">
 					<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
-						<input type="text" class="createblog-input" ng-model="blog.title"
+						<input type="text" class="createblog-input" data-ng-model="blog.title"
 							placeholder="Blog Title"> <span class="highlight"></span>
 						<span class="createblog-bar"></span>
 					</div>
@@ -21,13 +21,13 @@
 				<div class="form-group">
 					<div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
 						<textarea type="text" rows="5" class="createblog-input"
-							ng-model="blog.body" placeholder="Blog Body"> </textarea>
+							data-ng-model="blog.body" placeholder="Blog Body"> </textarea>
 						<span class="highlight"></span> <span class="createblog-bar"></span>
 					</div>
 				</div>
 
 				<div class="form-group text-center">
-					<button type="submit" ng-click="createBlog()"
+					<button type="submit" data-ng-click="createBlog()"
 						class="createblog-btn">POST BLOG</button>
 
 				</div>
