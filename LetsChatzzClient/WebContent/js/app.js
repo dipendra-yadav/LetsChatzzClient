@@ -1,4 +1,4 @@
-var app = angular.module("myApp", [ 'ngRoute', 'ngCookies' ])
+var app = angular.module("myApp", [ 'ngRoute', 'ngCookies' ]);
 app.config(function($routeProvider) {
 	console.log("**********From App.js => Entering myApp");
 
@@ -59,10 +59,10 @@ app.config(function($routeProvider) {
 	
 
 
-})
+});
 app.run(function($cookieStore,$rootScope,$location,UserService){
 	
-	
+	console.log("run hit****");
 	   if($rootScope.currentUser==undefined){
 		   $rootScope.currentUser = $cookieStore.get('currentUser');
 		   
@@ -75,7 +75,7 @@ app.run(function($cookieStore,$rootScope,$location,UserService){
 			UserService.logout()
 			.then(function(response){
 				console.log("logged out successfully..");
-				/* $rootScope.message="Logged out Successfully"; */
+				$rootScope.message="Logged out Successfully"; */
 				$location.path('/login')
 			},
 			function(response){
@@ -84,5 +84,5 @@ app.run(function($cookieStore,$rootScope,$location,UserService){
 			
 		}	
 		
-})
+});
 	

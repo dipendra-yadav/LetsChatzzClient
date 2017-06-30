@@ -72,7 +72,7 @@ app.controller('UserController', function($scope, $rootScope, $location,$cookieS
 		.then(function(response){
 			console.log("**********From UserController.js => logout() => success - Entering success function for logout")
 			console.log("**********response.status => " + response.status)
-			$location.path('/home')
+			$location.path('/login')
 		},
 		function(response){
 			console.log("**********From UserController.js => logout() => failure - Entering failure function for logout")

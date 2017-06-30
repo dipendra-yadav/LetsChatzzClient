@@ -13,6 +13,7 @@ app.controller('BlogController', function($scope, $location, BlogService) {
 			console.log("**********response.data => " + response.data)
 			console.log("**********response.status => " + response.status)
 			alert("Blog Added Successfully!")
+			
 			$location.path('/getAllBlogs')
 
 		}, function(response) {
